@@ -3,7 +3,7 @@
   const items = Array.from(document.querySelectorAll('.spiral-item'));
   if(!spiral || items.length === 0) return;
 
-  const radius = 235;
+  const radius = 250;
   const yStep = 34;
   const turnDeg = 34;
   const rotSpeed = 0.045;
