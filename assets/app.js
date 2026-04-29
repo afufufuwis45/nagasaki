@@ -10,7 +10,7 @@
 
   // 調整ポイント
   const radius = 220;
-  const yStep = 54;        // 螺旋の縦間隔。狭めたい場合は小さく、広げたい場合は大きくする
+  const yStep = 25;        // 螺旋の縦間隔。狭めたい場合は小さく、広げたい場合は大きくする
   const turnDeg = 42;      // 1枚ごとの回転角度
   const descendLimit = 300;
 
