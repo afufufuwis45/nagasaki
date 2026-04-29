@@ -3,74 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>旅のしおり</title>
+  <title>福岡・壱岐・長崎 旅のしおり</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <main class="app washi">
   <section class="hero">
-    <div class="kicker">✈️ 4月29日〜5月2日 🌿</div>
+    <div class="kicker">✈️ 2026.04.29 - 05.02 🌿</div>
     <h1 class="title">福岡・壱岐・長崎<br>旅のしおり</h1>
-    <p class="lead">スポット画像がゆっくり回遊します。気になるカードをタップすると詳細ページへ移動します。</p>
+    <p class="lead">旅程・スポット・予約情報をまとめた4日間のしおりです。</p>
     <div class="seal">和旅</div>
   </section>
 
-  <p class="home-note">画像は <strong>assets/img/</strong> に入れてください。ファイル名はカード内に明記しています。</p>
-
-  <section class="spiral-wrap" aria-label="旅の螺旋ギャラリー">
+  <section class="spiral-wrap" aria-label="旅のギャラリー">
     <div class="spiral">
-      <!-- 1日目：カード + 画像4枚 -->
-      <a class="spiral-item day-card" href="days/day1.html">
-        <div class="img-slot" data-img="assets/img/day1_card.jpg">day1_card.jpg</div>
-        <strong>1日目</strong><span>4/29(水)<br>羽田集合・福岡へ</span>
-      </a>
-      <a class="spiral-item photo-card" href="spots/haneda.html"><div class="img-slot" data-img="assets/img/day1_1.jpg">day1_1.jpg</div><span>羽田空港</span></a>
-      <a class="spiral-item photo-card" href="spots/haneda-walk.html"><div class="img-slot" data-img="assets/img/day1_2.jpg">day1_2.jpg</div><span>空港散策</span></a>
-      <a class="spiral-item photo-card" href="spots/dinner-0429.html"><div class="img-slot" data-img="assets/img/day1_3.jpg">day1_3.jpg</div><span>夕食</span></a>
-      <a class="spiral-item photo-card" href="spots/ana271.html"><div class="img-slot" data-img="assets/img/day1_4.jpg">day1_4.jpg</div><span>福岡到着</span></a>
+      <a class="spiral-item day-card" href="days/day1.html"><img src="assets/img/day1_card.jpg" alt="1日目"><div class="caption"><strong>1日目</strong><span>4/29(水) 羽田・福岡</span></div></a>
+      <a class="spiral-item photo-card" href="spots/haneda.html"><img src="assets/img/day1_1.jpg" alt="羽田空港"><span>羽田空港</span></a>
+      <a class="spiral-item photo-card" href="spots/haneda-walk.html"><img src="assets/img/day1_2.jpg" alt="空港散策"><span>空港散策</span></a>
+      <a class="spiral-item photo-card" href="spots/dinner-0429.html"><img src="assets/img/day1_3.jpg" alt="夕食"><span>夕食</span></a>
+      <a class="spiral-item photo-card" href="spots/ana271.html"><img src="assets/img/day1_4.jpg" alt="福岡到着"><span>福岡到着</span></a>
 
-      <!-- 2日目：カード + 画像4枚 -->
-      <a class="spiral-item day-card" href="days/day2.html">
-        <div class="img-slot" data-img="assets/img/day2_card.jpg">day2_card.jpg</div>
-        <strong>2日目</strong><span>4/30(木)<br>博多・壱岐・長崎夜景</span>
-      </a>
-      <a class="spiral-item photo-card" href="spots/shokudo-owan.html"><div class="img-slot" data-img="assets/img/day2_1.jpg">day2_1.jpg</div><span>食堂おわん</span></a>
-      <a class="spiral-item photo-card" href="spots/jetfoil.html"><div class="img-slot" data-img="assets/img/day2_2.jpg">day2_2.jpg</div><span>ジェットフォイル</span></a>
-      <a class="spiral-item photo-card" href="spots/tatsunoshima.html"><div class="img-slot" data-img="assets/img/day2_3.jpg">day2_3.jpg</div><span>辰の島</span></a>
-      <a class="spiral-item photo-card" href="spots/inasayama-ropeway.html"><div class="img-slot" data-img="assets/img/day2_4.jpg">day2_4.jpg</div><span>稲佐山夜景</span></a>
+      <a class="spiral-item day-card" href="days/day2.html"><img src="assets/img/day2_card.jpg" alt="2日目"><div class="caption"><strong>2日目</strong><span>4/30(木) 博多・壱岐・長崎</span></div></a>
+      <a class="spiral-item photo-card" href="spots/shokudo-owan.html"><img src="assets/img/day2_1.jpg" alt="食堂おわん"><span>食堂おわん</span></a>
+      <a class="spiral-item photo-card" href="spots/jetfoil.html"><img src="assets/img/day2_2.jpg" alt="ジェットフォイル"><span>ジェットフォイル</span></a>
+      <a class="spiral-item photo-card" href="spots/tatsunoshima.html"><img src="assets/img/day2_3.jpg" alt="辰の島"><span>辰の島</span></a>
+      <a class="spiral-item photo-card" href="spots/inasayama-ropeway.html"><img src="assets/img/day2_4.jpg" alt="稲佐山夜景"><span>稲佐山夜景</span></a>
 
-      <!-- 3日目：カード + 画像4枚 -->
-      <a class="spiral-item day-card" href="days/day3.html">
-        <div class="img-slot" data-img="assets/img/day3_card.jpg">day3_card.jpg</div>
-        <strong>3日目</strong><span>5/1(金)<br>長崎市内・小浜温泉</span>
-      </a>
-      <a class="spiral-item photo-card" href="spots/glover-garden.html"><div class="img-slot" data-img="assets/img/day3_1.jpg">day3_1.jpg</div><span>グラバー園</span></a>
-      <a class="spiral-item photo-card" href="spots/nagasaki-chinatown.html"><div class="img-slot" data-img="assets/img/day3_2.jpg">day3_2.jpg</div><span>中華街</span></a>
-      <a class="spiral-item photo-card" href="spots/obama-onsen.html"><div class="img-slot" data-img="assets/img/day3_3.jpg">day3_3.jpg</div><span>小浜温泉</span></a>
-      <a class="spiral-item photo-card" href="spots/iseya.html"><div class="img-slot" data-img="assets/img/day3_4.jpg">day3_4.jpg</div><span>伊勢屋</span></a>
+      <a class="spiral-item day-card" href="days/day3.html"><img src="assets/img/day3_card.jpg" alt="3日目"><div class="caption"><strong>3日目</strong><span>5/1(金) 長崎・小浜</span></div></a>
+      <a class="spiral-item photo-card" href="spots/glover-garden.html"><img src="assets/img/day3_1.jpg" alt="グラバー園"><span>グラバー園</span></a>
+      <a class="spiral-item photo-card" href="spots/nagasaki-chinatown.html"><img src="assets/img/day3_2.jpg" alt="長崎新地中華街"><span>長崎新地中華街</span></a>
+      <a class="spiral-item photo-card" href="spots/obama-onsen.html"><img src="assets/img/day3_3.jpg" alt="小浜温泉"><span>小浜温泉</span></a>
+      <a class="spiral-item photo-card" href="spots/iseya.html"><img src="assets/img/day3_4.jpg" alt="伊勢屋"><span>伊勢屋</span></a>
 
-      <!-- 4日目：カード + 画像4枚 -->
-      <a class="spiral-item day-card" href="days/day4.html">
-        <div class="img-slot" data-img="assets/img/day4_card.jpg">day4_card.jpg</div>
-        <strong>4日目</strong><span>5/2(土)<br>雲仙・西海橋・帰路</span>
-      </a>
-      <a class="spiral-item photo-card" href="spots/unzen-ropeway.html"><div class="img-slot" data-img="assets/img/day4_1.jpg">day4_1.jpg</div><span>雲仙ロープウェイ</span></a>
-      <a class="spiral-item photo-card" href="spots/onsen.html"><div class="img-slot" data-img="assets/img/day4_2.jpg">day4_2.jpg</div><span>日帰り温泉</span></a>
-      <a class="spiral-item photo-card" href="spots/saikaibashi.html"><div class="img-slot" data-img="assets/img/day4_3.jpg">day4_3.jpg</div><span>西海橋</span></a>
-      <a class="spiral-item photo-card" href="spots/ana670.html"><div class="img-slot" data-img="assets/img/day4_4.jpg">day4_4.jpg</div><span>長崎空港</span></a>
+      <a class="spiral-item day-card" href="days/day4.html"><img src="assets/img/day4_card.jpg" alt="4日目"><div class="caption"><strong>4日目</strong><span>5/2(土) 雲仙・西海橋・帰路</span></div></a>
+      <a class="spiral-item photo-card" href="spots/unzen-ropeway.html"><img src="assets/img/day4_1.jpg" alt="雲仙ロープウェイ"><span>雲仙ロープウェイ</span></a>
+      <a class="spiral-item photo-card" href="spots/onsen.html"><img src="assets/img/day4_2.jpg" alt="日帰り温泉"><span>日帰り温泉</span></a>
+      <a class="spiral-item photo-card" href="spots/saikaibashi.html"><img src="assets/img/day4_3.jpg" alt="西海橋"><span>西海橋</span></a>
+      <a class="spiral-item photo-card" href="spots/ana670.html"><img src="assets/img/day4_4.jpg" alt="長崎空港"><span>長崎空港</span></a>
     </div>
   </section>
 
   <section class="section">
     <h2>日程</h2>
     <div class="nav-grid">
-      <a class="nav-btn" href="days/day1.html">1日目<br><span class="small">4/29(水)</span></a>
-      <a class="nav-btn" href="days/day2.html">2日目<br><span class="small">4/30(木)</span></a>
-      <a class="nav-btn" href="days/day3.html">3日目<br><span class="small">5/1(金)</span></a>
-      <a class="nav-btn" href="days/day4.html">4日目<br><span class="small">5/2(土)</span></a>
+      <a class="nav-btn" href="days/day1.html">1日目<br><span>4/29(水)</span></a>
+      <a class="nav-btn" href="days/day2.html">2日目<br><span>4/30(木)</span></a>
+      <a class="nav-btn" href="days/day3.html">3日目<br><span>5/1(金)</span></a>
+      <a class="nav-btn" href="days/day4.html">4日目<br><span>5/2(土)</span></a>
     </div>
   </section>
-  <div class="footer">✈️ 2026.04.29 - 05.02 / Fukuoka・Iki・Nagasaki</div>
+
+  <footer class="footer">Fukuoka・Iki・Nagasaki / 2026</footer>
 </main>
 <script src="assets/app.js"></script>
 </body>
