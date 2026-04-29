@@ -1,4 +1,11 @@
-旅のしおりHTML一式
+旅のしおり HTML一式
 
-index.html を開いてください。
-写真は「画像差し替え」と書かれた箇所を編集してください。
+画像の置き場所：assets/img/
+
+必要画像名：
+day1_card.jpg, day1_1.jpg, day1_2.jpg, day1_3.jpg, day1_4.jpg
+day2_card.jpg, day2_1.jpg, day2_2.jpg, day2_3.jpg, day2_4.jpg
+day3_card.jpg, day3_1.jpg, day3_2.jpg, day3_3.jpg, day3_4.jpg
+day4_card.jpg, day4_1.jpg, day4_2.jpg, day4_3.jpg, day4_4.jpg
+
+GitHub Pagesでは index.html / assets / days / spots をルート直下に置いてください。
