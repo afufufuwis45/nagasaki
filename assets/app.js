@@ -8,7 +8,7 @@
   const turnDeg = 34;
   const rotSpeed = 0.045;
   const floatSpeed = 0.012;
-  const floatRange = 16;
+  const floatRange = 25;
   let frame = 0;
 
   function layout(){
