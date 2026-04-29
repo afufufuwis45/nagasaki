@@ -8,11 +8,15 @@
   let dragRot = 0;
   let scrollY = 0;
 
-  // 調整ポイント
-  const radius = 220;
-  const yStep = 25;        // 螺旋の縦間隔。狭めたい場合は小さく、広げたい場合は大きくする
+  // ===== 調整ポイント =====
+  const radius = 220;      // 螺旋の半径
+  const yStep = 45;        // 螺旋の縦間隔。狭めるなら45、広げるなら65くらい
   const turnDeg = 42;      // 1枚ごとの回転角度
-  const descendLimit = 300;
+  const autoRotSpeed = 0.08; // 自動回転速度
+  const autoYSpeed = 0.12;   // 自動下降速度
+  const scrollPower = 220;   // 縦スクロール時の上下移動量
+  const dragPower = 0.45;    // 横スワイプ時の回転感度
+  // =======================
 
   let isDragging = false;
   let startX = 0;
@@ -20,11 +24,24 @@
 
   function layout(){
     const items = [...spiral.querySelectorAll('.spiral-item')];
-    const centerIndex = (items.length - 1) / 2;
+    const count = items.length;
+    if(count === 0) return;
+
+    const centerIndex = (count - 1) / 2;
+    const loopHeight = count * yStep;
+
     items.forEach((el, i) => {
       const angle = i * turnDeg;
-      const y = (i - centerIndex) * yStep;
-      el.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) translateY(${y}px)`;
+
+      // 基本位置 + 自動下降
+      let y = (i - centerIndex) * yStep + autoY;
+
+      // 無限ループ処理
+      // 下に流れたものを自然に上へ戻す
+      y = ((y + loopHeight / 2) % loopHeight + loopHeight) % loopHeight - loopHeight / 2;
+
+      el.style.transform =
+        `rotateY(${angle}deg) translateZ(${radius}px) translateY(${y}px)`;
     });
   }
 
@@ -33,25 +50,29 @@
     const vh = window.innerHeight || document.documentElement.clientHeight;
     const center = rect.top + rect.height / 2;
     const progress = (vh / 2 - center) / vh;
-    scrollY = progress * 220; // 縦スクロール時の上下移動量。大きくするとスクロール反応が強くなる
+
+    scrollY = progress * scrollPower;
   }
 
   function animate(){
-    autoRot += 0.08;       // 自動回転速度
-    autoY += 0.12;         // 自動下降速度
-    if(autoY > descendLimit) autoY = -descendLimit;
+    autoRot += autoRotSpeed;
+    autoY += autoYSpeed;
+
+    layout();
 
     const totalRot = autoRot + dragRot;
-    const totalY = autoY + scrollY;
-    spiral.style.transform = `translateZ(-265px) translateY(${totalY}px) rotateY(${totalRot}deg)`;
+
+    spiral.style.transform =
+      `translateZ(-265px) translateY(${scrollY}px) rotateY(${totalRot}deg)`;
+
     requestAnimationFrame(animate);
   }
 
-  // 縦スクロールで螺旋が上下に動く処理
+  // 縦スクロールで螺旋全体が上下に動く
   window.addEventListener('scroll', updateScrollY, { passive:true });
   window.addEventListener('resize', updateScrollY);
 
-  // 横ドラッグ/横スワイプで螺旋を回す処理
+  // 横ドラッグ / 横スワイプで螺旋を回す
   wrap.addEventListener('pointerdown', (e) => {
     isDragging = true;
     startX = e.clientX;
@@ -61,16 +82,21 @@
 
   wrap.addEventListener('pointermove', (e) => {
     if(!isDragging) return;
+
     const dx = e.clientX - startX;
-    dragRot = startRot + dx * 0.45;
+    dragRot = startRot + dx * dragPower;
   });
 
   function endDrag(e){
     isDragging = false;
-    try { wrap.releasePointerCapture?.(e.pointerId); } catch(_) {}
+    try {
+      wrap.releasePointerCapture?.(e.pointerId);
+    } catch(_) {}
   }
+
   wrap.addEventListener('pointerup', endDrag);
   wrap.addEventListener('pointercancel', endDrag);
+  wrap.addEventListener('pointerleave', endDrag);
 
   layout();
   updateScrollY();
